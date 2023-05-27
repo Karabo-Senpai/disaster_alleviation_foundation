@@ -1,0 +1,104 @@
+﻿@model IEnumerable<DisasterAlleviationPOE.Models.MonetaryDonationsStats>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h1 style="color:rebeccapurple; text-align:center">Welcome To The Disaster Alleviation Foundation</h1>
+
+<div id="about">
+    <div class="container" style="text-align:center;">
+        <div class="row text-center" data-scroll-reveal="enter from the bottom after .3s">
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+                <h2 style="text-align:center;" >About The Disaster Alleviation Foundation </h2>
+                <p  style="text-align:center;" >Founded in 2022 the DAF was started to aid countries and individauls that have been victims of any disaster that may have occured</p>
+            </div>
+        </div>
+        <div class="row pad-low">
+            <div class="col-lg-4 col-md-4 hover-color" data-scroll-reveal="enter from the left after .6s">
+                <div class="media">
+                    <div class="pull-left">
+                        <i class="fa fa-water fa-5x  icon-round "></i>
+
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">Monetary Donations</h3>
+                        <p>
+                            Lend a hand by donating any amount of money you may have to give to those in need
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4" data-scroll-reveal="enter from the bottom after .9s">
+                <div class="media">
+                    <div class="pull-left">
+                        <i class="fa fa-book fa-5x  icon-round"></i>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">Goods Donations</h3>
+                        <p>
+                            Lend a hand by donating any goods such as foods, clothes, blankets you may have to give to those in need
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="container-xxl bg-light my-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Featured Disasters</div>
+            <h1 class="display-6 mb-5">Lend a helping hand out to the needy</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
+                    <div class="text-center p-4 pt-0">
+                        <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
+                            <small>Volcanic Erruption</small>
+                        </div>
+                    </div>
+                    <div class="position-relative mt-auto">
+                        <img class="img-fluid" src="~/img/volcano.jfif" alt="">
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
+                    <div class="text-center p-4 pt-0">
+                        <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
+                            <small>Floods</small>
+                        </div>
+                    </div>
+                    <div class="position-relative mt-auto">
+                        <img class="img-fluid" src="~/img/floods.jfif" alt="">
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
+                    <div class="text-center p-4 pt-0">
+                        <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
+                            <small>Earth Quake</small>
+                        </div>
+                    </div>
+                    <div class="position-relative mt-auto">
+                        <img class="img-fluid" src="~/img/earthquake.jfif" alt="">
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

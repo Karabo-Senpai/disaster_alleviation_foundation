@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DisasterAlleviationPOE.Models.RequiredAidType>
+
+@{
+    ViewData["Title"] = "Required Aids";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Recorded Required Aids</h1>
+<div class="tab-content">
+    <div id="tab-content-1" class="container tab-pane active">
+
+        <table style="margin-top:30px; font-size:18px;" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="color:rebeccapurple !important;">
+
+                        @Html.DisplayNameFor(model => model.RequiredAidName)
+                    </th>
+
+                    <th style="color:rebeccapurple !important;">Update</th>
+                    <th style="color:rebeccapurple !important;">Delete</th>
+                    <th style="color:rebeccapurple !important;">View Details</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="color:orangered !important;">
+
+                            @Html.DisplayFor(modelItem => item.RequiredAidName)
+
+                        </td>
+                        <td style="color:orangered !important;">
+
+                            <a asp-action="Edit" asp-route-id="@item.RequiredAidTypeID">Update</a>
+
+
+                        </td>
+                        <td style="color:orangered !important;">
+
+
+                            <a asp-action="Delete" asp-route-id="@item.RequiredAidTypeID">Delete</a>
+
+
+                        </td>
+
+                        <td style="color:orangered !important;">
+
+
+                            <a asp-action="Details" asp-route-id="@item.RequiredAidTypeID">View Details</a>
+
+
+                        </td>
+
+
+
+                    </tr>
+                }
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+<h3 style="color:rebeccapurple !important;">Add A New Aid Below</h3>
+
+<td style="color:orangered !important;">
+
+    <a asp-action="Create">Add New Aid</a>
+
+</td>

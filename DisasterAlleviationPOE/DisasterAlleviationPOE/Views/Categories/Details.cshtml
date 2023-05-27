@@ -1,0 +1,25 @@
+﻿@model DisasterAlleviationPOE.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Recorded Category</h1>
+
+<div>
+ 
+  
+    <dl class="row">       
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CategoryID" style="color:orangered !important;">Update</a>
+    <a asp-action="Index" style="color:rebeccapurple !important;">Back to List</a>
+</div>

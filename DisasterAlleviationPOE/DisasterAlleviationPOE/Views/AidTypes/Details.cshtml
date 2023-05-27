@@ -1,0 +1,26 @@
+﻿@model DisasterAlleviationPOE.Models.RequiredAidType
+
+@{
+    ViewData["Title"] = "Required Aid Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Required Aid Details</h1>
+
+<div>
+
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RequiredAidName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RequiredAidName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RequiredAidTypeID" style="color:orangered !important;">Update</a>
+    <a asp-action="Index" style="color:rebeccapurple !important;">Back to List</a>
+</div>
+

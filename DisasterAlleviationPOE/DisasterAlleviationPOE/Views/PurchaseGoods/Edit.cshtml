@@ -1,0 +1,55 @@
+﻿@model DisasterAlleviationPOE.Models.PurchaseGoods
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Update Allocations</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="GoodsPurchaseID" />
+
+            <div class="form-group">
+                <label asp-for="DisasterID" class="control-label"></label>
+                <select asp-for="DisasterID" class="form-control" asp-items="ViewBag.DisasterID"></select>
+                <span asp-validation-for="DisasterID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MonetaryID" class="control-label"></label>
+                <select asp-for="MonetaryID" class="form-control" asp-items="ViewBag.MonetaryID"></select>
+                <span asp-validation-for="MonetaryID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PurchaseAmount" class="control-label"></label>
+                <input asp-for="PurchaseAmount" class="form-control" />
+                <span asp-validation-for="PurchaseAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update Allocation" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a style="color:rebeccapurple !important;" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+

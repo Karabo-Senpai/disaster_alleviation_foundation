@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DisasterAlleviationPOE.Models.DisasterDetailsStats>
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "All Disasters Statistics";
+}
+
+<h1>Current Disasters Recorded</h1>
+
+<div class="tab-content">
+    <div id="tab-content-1" class="container tab-pane active">
+
+
+        <table style="margin-top:30px; font-size:18px;" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="color:orangered !important;">Start Date</th>
+                    <th style="color:orangered !important;">Description</th>
+                    <th style="color:orangered !important;">Goods Allocated</th>
+                    <th style="color:orangered !important;">Funds Allocated</th>
+                </tr>
+
+            </thead>
+
+
+            @foreach (var item in Model)
+            {
+
+                <tr>
+
+                    <td style="color:rebeccapurple !important;">
+                        @Html.DisplayFor(modelItem => item.DisastersM.StartDate)
+                    </td>
+
+
+                    <td style="color:rebeccapurple !important;">
+                        @Html.DisplayFor(modelItem => item.DisastersM.Description)
+
+                    </td>
+                    <td style="color:rebeccapurple !important;">
+                        @Html.DisplayFor(modelItem => item.GoodsDonationsM.Description)
+
+                    </td>
+
+                    <td style="color:rebeccapurple !important;">
+                        @Html.DisplayFor(modelItem => item.PurchaseGoodsM.PurchaseAmount)
+
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <h2 style="color:rebeccapurple !important;">Total Active Disasters To Date : @ViewBag.totalDisasters</h2>
+
+
+    </div>
+</div>
+

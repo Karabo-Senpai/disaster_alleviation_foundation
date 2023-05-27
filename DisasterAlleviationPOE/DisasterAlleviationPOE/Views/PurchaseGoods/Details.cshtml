@@ -1,0 +1,46 @@
+﻿@model DisasterAlleviationPOE.Models.PurchaseGoods
+
+@{
+    ViewData["Title"] = "Monetary Donation Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Monetary Allocation Details</h1>
+
+<div>
+
+    <dl class="row">
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PurchaseAmount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PurchaseAmount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Disasters)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Disasters.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MonetaryDonations)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MonetaryDonations.MonetaryID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a style="color:orangered !important;" asp-action="Edit" asp-route-id="@Model.GoodsPurchaseID">Edit</a>
+    <br />
+    <br />
+
+    <a style="color:rebeccapurple !important;" asp-action="Index">Back to List</a>
+</div>

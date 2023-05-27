@@ -1,0 +1,126 @@
+﻿@model IEnumerable<DisasterAlleviationPOE.Models.Disasters>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Current Disasters Recorded</h1>
+
+
+
+<div class="tab-content">
+    <div id="tab-content-1" class="container tab-pane active">
+
+        <table style="margin-top:30px; font-size:18px;" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="color:rebeccapurple !important;">
+
+                        @Html.DisplayNameFor(model => model.DisasterID)
+
+
+                    </th>
+                    <th style="color:rebeccapurple !important;">
+
+                        @Html.DisplayNameFor(model => model.StartDate)
+                    </th>
+                    <th style="color:rebeccapurple !important;">
+
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </th> <th style="color:rebeccapurple !important;">
+
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th> <th style="color:rebeccapurple !important;">
+
+                        @Html.DisplayNameFor(model => model.Location)
+                    </th> <th style="color:rebeccapurple !important;">
+
+                        @Html.DisplayNameFor(model => model.RequiredAidType)
+                    </th>
+                    <th style="color:rebeccapurple !important;">Update</th>
+                    <th style="color:rebeccapurple !important;">Delete</th>
+                    <th style="color:rebeccapurple !important;">View Details</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+
+
+
+                    <tr>
+                        <td style="color:orangered !important;">
+
+                            @Html.DisplayFor(modelItem => item.DisasterID)
+
+                        </td>
+                        <td style="color:orangered !important;">
+
+                            @Html.DisplayFor(modelItem => item.StartDate)
+
+                        </td>
+                        <td style="color:orangered !important;">
+
+
+                            @Html.DisplayFor(modelItem => item.EndDate)
+
+                        </td> <td style="color:orangered !important;">
+
+
+                            @Html.DisplayFor(modelItem => item.Description)
+
+                        </td> <td style="color:orangered !important;">
+
+
+                            @Html.DisplayFor(modelItem => item.Location)
+
+                        </td> <td style="color:orangered !important;">
+
+
+                            @Html.DisplayFor(modelItem => item.RequiredAidType.RequiredAidName)
+
+                        </td>
+
+                        <td style="color:orangered !important;">
+
+
+                            <a asp-action="Edit" asp-route-id="@item.DisasterID">Edit</a>
+
+
+                        </td>
+
+                        <td style="color:orangered !important;">
+
+                            <a asp-action="Delete" asp-route-id="@item.DisasterID">Delete</a>
+
+
+
+                        </td>
+
+                        <td style="color:orangered !important;">
+
+                            <a asp-action="Details" asp-route-id="@item.DisasterID">Details</a>
+
+
+
+                        </td>
+                    </tr>
+                }
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+
+<h3 style="color:rebeccapurple !important;">Add A New Disaster Below</h3>
+
+<td style="color:orangered !important;">
+
+    <a asp-action="Create">Add New Disaster</a>
+
+</td>
+
+
+
+
+

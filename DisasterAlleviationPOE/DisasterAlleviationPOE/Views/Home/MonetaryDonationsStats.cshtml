@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DisasterAlleviationPOE.Models.MonetaryDonationsStats>
+
+@{
+   // ViewData["Title"] = "Monetary Donations Stats";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{
+    ViewBag.Title = "Monetary Donations Statistics";
+}
+
+<h1>Current Monetary Donations Obtained</h1>
+
+<div class="tab-content">
+    <div id="tab-content-1" class="container tab-pane active">
+
+
+        <table style="margin-top:30px; font-size:18px;" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="color:orangered !important;">Donation Date</th>
+                    <th style="color:orangered !important;">Number Of Donors</th>
+                </tr>
+
+            </thead>
+
+
+            @foreach (var item in Model)
+            {
+
+                <tr>
+
+                    <td style="color:rebeccapurple !important;">
+
+                        @Html.DisplayFor(modelItem => item.DonationDate)
+
+                    </td>
+
+
+                    <td style="color:rebeccapurple !important;">
+
+                        @item.MonetaryDonationsCount
+
+                    </td>
+
+                </tr>
+
+
+            }
+        </table>
+
+        <h3>Total Funds: @ViewBag.totalMonetaryDonations</h3>
+
+
+    </div>
+</div>
+

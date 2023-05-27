@@ -1,0 +1,92 @@
+﻿@model IEnumerable<DisasterAlleviationPOE.Models.PurchaseGoods>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Monetary Allocations To  Disasters</h1>
+
+
+<div class="tab-content">
+    <div id="tab-content-1" class="container tab-pane active">
+
+        <table style="margin-top:30px; font-size:18px;" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="color:rebeccapurple !important;">
+
+                        @Html.DisplayNameFor(model => model.Description)
+
+
+                    </th>
+                    <th style="color:rebeccapurple !important;">
+
+                        @Html.DisplayNameFor(model => model.PurchaseAmount)
+                    </th>
+                    <th style="color:rebeccapurple !important;">
+
+                        @Html.DisplayNameFor(model => model.Disasters)
+                    </th>             
+                    <th style="color:rebeccapurple !important;">Update</th>
+                    <th style="color:rebeccapurple !important;">Delete</th>
+                    <th style="color:rebeccapurple !important;">View Details</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+
+
+
+                    <tr>
+                        <td style="color:orangered !important;">
+
+                            @Html.DisplayFor(modelItem => item.Description)
+
+                        </td>
+                        <td style="color:orangered !important;">
+
+                            @Html.DisplayFor(modelItem => item.PurchaseAmount)
+
+                        </td>
+                        <td style="color:orangered !important;">
+
+
+                            @Html.DisplayFor(modelItem => item.Disasters.Description)
+
+                        </td>
+                      
+                        <td style="color:orangered !important;">
+
+
+                            <a asp-action="Edit" asp-route-id="@item.GoodsPurchaseID">Edit</a>
+
+
+                        </td>
+
+                        <td style="color:orangered !important;">
+
+                            <a asp-action="Delete" asp-route-id="@item.GoodsPurchaseID">Delete</a>
+                        </td>
+                        <td style="color:orangered !important;">
+
+                            <a asp-action="Details" asp-route-id="@item.GoodsPurchaseID">Details</a>
+                        </td>
+                    </tr>
+                }
+            </thead>
+        </table>
+    </div>
+</div>
+
+<h3>Total Monetary Funds Available : @ViewBag.totalMonetaryDonations</h3>
+
+<br />
+
+<h3 style="color:rebeccapurple !important;">Allocate Funds To A Disaster</h3>
+
+<td style="color:orangered !important;">
+
+    <a asp-action="Create">Add Allocation</a>
+
+</td>

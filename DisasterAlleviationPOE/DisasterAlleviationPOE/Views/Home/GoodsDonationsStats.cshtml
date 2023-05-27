@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DisasterAlleviationPOE.Models.GoodDonationStats>
+
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Goods Donations Statistics";
+}
+
+<h1>Current Goods Donations Obtained</h1>
+
+<div class="tab-content">
+    <div id="tab-content-1" class="container tab-pane active">
+
+
+        <table style="margin-top:30px; font-size:18px;" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="color:orangered !important;">Donation Date</th>
+                    <th style="color:orangered !important;">Goods</th>
+                </tr>
+
+            </thead>
+
+
+            @foreach (var item in Model)
+            {
+
+                <tr>
+
+                    <td style="color:rebeccapurple !important;">
+
+                        @Html.DisplayFor(modelItem => item.DonationDate)
+
+                    </td>
+
+
+                    <td style="color:rebeccapurple !important;">
+
+                        @item.GoodsDonationCount
+
+                    </td>
+
+                </tr>
+
+
+            }
+        </table>
+
+        <h3 style="color:rebeccapurple !important;">Total Goods Recieved: @ViewBag.totalGoods</h3>
+
+
+    </div>
+</div>
+
